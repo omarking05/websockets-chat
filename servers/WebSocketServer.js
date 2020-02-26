@@ -36,12 +36,11 @@ class WebSocketServer {
 
     	connection.on('close', (reasonCode, description) => {
     		console.log('- Peer ' + connection.remoteAddress + ' disconnected.');
-
     		const index = this.connections.indexOf(connection);
-        if (index !== -1) {
-          // remove the connection from the pool
-          this.connections.splice(index, 1);
-        }
+            if (index !== -1) {
+              // remove the connection from the pool
+              this.connections.splice(index, 1);
+            }
     	});
     });
 
